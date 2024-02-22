@@ -1,0 +1,37 @@
+Les commandes principales :
+Shutdown /a – Cette commande interrompt un processus d’arrêt ou de redémarrage. Peut être utile si Windows Update a décidé qu’il était temps de redémarrer le PC. Le A vient de l’anglais abort.
+Shutdown /s – La commande shutdown. Cela arrête l’ordinateur lorsque vous l’exécutez.
+Shutdown /r – Arrête l’ordinateur et le redémarre ensuite. Le R est pour reboot.
+Shutdown /g – Comme shutdown /r, mais avec redémarrage de tous les programmes enregistré lorsque le système a été chargé.
+Shutdown /h – Hiberne l’ordinateur local.
+Shutdown /l – Déconnexion de l’utilisateur actuel.
+Shutdown /p – Arrête l’ordinateur sans avertissement préalable.
+
+Les commandes supplémentaires suivantes sont prises en charge :
+/e – Cela permet la documentation pour l’arrêt de l’ordinateur.
+/i – Affiche l’interface utilisateur. Doit être la première option de la commande.
+/hybride – Arrête, et permet le démarrage rapide. Doit être utilisé avec /s
+/t 0 – Définit la période de temporisation avant l’arrêt. La valeur par défaut est de 30 secondes, et vous pouvez accélérer les choses en définissant /t 0.
+/f – Force les programmes en cours à s’arrêter sans avertissement d’utilisateur. (/force fonctionne aussi)
+/m \\computer – Spécifiez un ordinateur distant sur lequel vous souhaitez exécuter la commande.
+/c “remarque” – Ajoute un commentaire expliquant le motif de l’arrêt ou du redémarrage de l’ordinateur. Supporte un maximum de 512 caractères et s’affiche à l’invite d’arrêt.
+/d – Ajoute une raison pour le redémarrage à l’aide d’un système de codes. Par exemple /dp: 1: 2 indique un arrêt planifié en raison d’une installation matérielle. La table avec les raisons principales s’affiche lorsque vous exécutez shutdown /?.
+/o – Cette commande redémarre le PC et charge le menu de démarrage avancé lors du démarrage.
+
+Exemples de commandes d’arrêt :
+Les exemples suivants mettent en surbrillance certains commutateurs de commande d’arrêt.
+
+Exécute un arrêt rapide. Cela oblige les applications à fermer
+shutdown /s /f /t:0
+
+Redémarre l’ordinateur et ajoute une raison. L’ordinateur redémarre en 30 secondes, car la commande t n’est pas spécifiée
+shutdown /r /d u:2:1
+
+Extinction de forcée de l’ordinateur distant “ComputerMFR” après 300 secondes, affichage d’une raison pour l’arrêt et commentaire dans l’invite d’arrêt.
+shutdown /m \\ComputerMFR/s /f /d p:1:2 /c “Ton PC doit s’arrêter pour une maintenance va boire une binouse mec !” /t 300
+
+
+Exemple:
+
+@echo off
+%SYSTEMROOT%\system32\shutdown.exe -s -t 0
