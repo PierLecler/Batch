@@ -33,10 +33,14 @@ shutdown /m \\ComputerMFR/s /f /d p:1:2 /c “Ton PC doit s’arrêter pour une 
 
 Exemple 1:
 
+<# -s = arrêt Windows ; -t = immédiat #>7
+
 @echo off
 %SYSTEMROOT%\system32\shutdown.exe -s -t 0
 
 Exemple 2:
+
+<# /s = arrêt windows #>
 
 echo off
 shutdown /s
