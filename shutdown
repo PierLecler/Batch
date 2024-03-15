@@ -31,7 +31,12 @@ Extinction de forcée de l’ordinateur distant “ComputerMFR” après 300 sec
 shutdown /m \\ComputerMFR/s /f /d p:1:2 /c “Ton PC doit s’arrêter pour une maintenance va boire une binouse mec !” /t 300
 
 
-Exemple:
+Exemple 1:
 
 @echo off
 %SYSTEMROOT%\system32\shutdown.exe -s -t 0
+
+Exemple 2:
+
+echo off
+shutdown /s
