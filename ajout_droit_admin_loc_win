@@ -1,0 +1,20 @@
+echo off
+
+cls
+
+echo vous devez m'executer en administrateur 
+echo entrer l ID et le mot de passe administrateur
+echo puis valider
+echo vous pouvez desormais continuer
+
+pause
+
+set nom=%USERNAME%
+
+net localgroup Administrateurs %nom% /add
+
+echo le pc va redemarrer penser a sauvegarder votre travail avant de continuer
+
+pause
+
+shutdown /r /t 0
